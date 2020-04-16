@@ -53,9 +53,12 @@ app.post('/api/cats', (req, res) => {
 // updatin specific object
 app.put('/api/cats/:id', (req, res) => {
   const cat = cats.find((c) => c.id === parseInt(req.params.id))
+
+  // if the id doesn't exist send this.
   if (!cat)
     return res.status(404).send('The cat with the given id was not found')
-
+    
+// if the id is found update
   cat.name = req.body.name,
   cat.color = req.body.color,
   cat.food = req.body.food
@@ -64,7 +67,7 @@ app.put('/api/cats/:id', (req, res) => {
 })
 
 
-// delete a object, if clicked twice the next is deleted. (1,2...)
+// delete a object, if clicked twice the next is deleted.
 app.delete('/api/cats/:id', (req, res) => {
   const cat = cats.find((c) => c.id === parseInt(req.params.id))
   if (!cat)
