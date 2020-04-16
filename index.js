@@ -6,11 +6,11 @@ const port = process.env.PORT || 3000
 
 // array ak "api"
 const cats = [
-  { id: 1, name: 'Sudden', color: "blue", food: "food"  },
-  { id: 2, name: 'Prins',color: "blue" , food: "food" },
-  { id: 3, name: 'Essi',color: "blue", food: "food"  },
-  { id: 4, name: 'Nuffe',color: "blue", food: "food"  },
-  { id: 5, name: 'Sindi',color: "blue", food: "food" },
+  { id: 1, name: 'Sudden', color: "Light Brown", food: "Royal Canin"  },
+  { id: 2, name: 'Prins',color: "Grey and White" , food: "Pure Naturals" },
+  { id: 3, name: 'Essi',color: "Dark Brown", food: "Orijen"  },
+  { id: 4, name: 'Nuffe',color: "Grey", food: "Purima"  },
+  { id: 5, name: 'Sindi',color: "Light Brown", food: "Mjau" },
 ]
 
 // what's shown on the screen when at the index page
