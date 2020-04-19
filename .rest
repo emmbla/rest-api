@@ -1,6 +1,6 @@
 # GET  http://localhost:3000/
 
-GET http://localhost:3000/api/cats
+# GET http://localhost:3000/api/cats
 
 # GET http://localhost:3000/api/cats/4
 
@@ -14,14 +14,14 @@ GET http://localhost:3000/api/cats
 #     "food": "Orijen",
 # }
 
-# PUT  http://localhost:3000/api/cats/1
-# Content-Type: application/json
+PUT  http://localhost:3000/api/cats/1
+Content-Type: application/json
 
-# {
-#     "name": "Mercedes",
-#     "color": "White"
-#     "food": "Cheese",
-# }
+{
+    "name": "Mercedes",
+    "color": "White",
+    "food": "Cheese"
+}
 
 
 
