@@ -2,11 +2,16 @@
 
 ### REST-API in NodeJS with express.
 
-## Express
+## Installerat för att köra
 
- \$ npm install express
-
- install the executable. The executable's major version will match Express's: \$ npm install -g express-generator@4
+ npm install
+ npm install express
+ npm install -g express-generator@4
+ npm install nodemon 
+ 
+ repot: https://github.com/emmbla/rest-api/
+ 
+ ## Check:
 
  1.Projektet innehåller minst 4 st. endpoints (GET, POST, PUT & DELETE för en resurs) ✓
 
