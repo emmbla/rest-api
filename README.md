@@ -1,6 +1,7 @@
 # Rest-API
 
 ### REST-API in NodeJS with express.
+Som titlen säger, vi skall individuellt bygga ett simpelt rest-api i node.js med express.js. Det skall ha funktionalitet för crud, create,read,update,delete.  (get,post,put,delete). Produkter/ infon ligger som en array lokalt i indexfilen.
 
 ## Installerat för att köra
 
