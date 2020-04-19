@@ -2,9 +2,9 @@
 const express = require('express')
 const app = express()
 app.use(express.json())
-const port = process.env.PORT || 3000
+const port = 3000
 
-// array ak "api"
+// array aka "api"
 const cats = [
   { id: 1, name: 'Sudden', color: "Light Brown", food: "Royal Canin"  },
   { id: 2, name: 'Prins',color: "Grey and White" , food: "Pure Naturals" },
@@ -13,65 +13,53 @@ const cats = [
   { id: 5, name: 'Sindi',color: "Light Brown", food: "Mjau" },
 ]
 
-// what's shown on the screen when at the index page
+//index 
 app.get('/', (req, res) => {
   res.send('The cats')
 })
 
-// what's shown when at courses page
+// Alla objekt
 app.get('/api/cats', (req, res) => {
   res.send(cats)
 })
 
-// get specific object
+// Specifikt objekt
 app.get('/api/cats/:id', (req, res) => {
   const cat = cats.find((c) => c.id === parseInt(req.params.id))
   if (!cat)
-    return res.status(404).send('The cat with the given id was not found')
+    return res.status(404).send('No cat with that ID.')
   res.send(cat)
 })
 
-// add onother object
+// Lägg till objekt
 app.post('/api/cats', (req, res) => {
- 
-  if (!req.body.name || req.body.name.length < 3) {
-    res.status(400).send('Name is requierd and shuold be minimum 3 characters')
-    return
-  }
-
-  const cat = {
-    id: cats.length + 1,
-    name: req.body.name,
-    color: req.body.color,
-    food: req.body.food
-  }
-
-  cats.push(cat)
-  res.send(cat)
+  let newCat = req.body
+  newCat.id = s4()
+  cats.push(req.body)
+  res.status(201).send(cats)
 })
 
-// updatin specific object
+
+// Uppdatera ett objekt
 app.put('/api/cats/:id', (req, res) => {
   const cat = cats.find((c) => c.id === parseInt(req.params.id))
-
-  // if the id doesn't exist send this.
+  // Om id:t ej finns
   if (!cat)
     return res.status(404).send('The cat with the given id was not found')
     
-// if the id is found update
+// om id hittades
   cat.name = req.body.name,
   cat.color = req.body.color,
   cat.food = req.body.food
-
   res.send(cat)
 })
 
 
-// delete a object, if clicked twice the next is deleted.
+// Radera objekt
 app.delete('/api/cats/:id', (req, res) => {
   const cat = cats.find((c) => c.id === parseInt(req.params.id))
   if (!cat)
-  return res.status(404).send('The coruse with the given id was not found')
+  return res.status(404).send('The cat with the given id was not found')
   
   const index = cats.indexOf(cat)
   cats.splice(index, 1)
@@ -79,4 +67,13 @@ app.delete('/api/cats/:id', (req, res) => {
   res.send(cat)
 })
 
+
+
 app.listen(port, () => console.log(`Running at http://localhost:${port}`))
+
+// random id 
+let s4 = () => {
+  return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+}
