@@ -15,8 +15,8 @@ Content-Type: application/json
 
 {
     "name": "Ysera",
-    "color": "Orange"
-    "food": "Orijen",
+    "color": "Orange",
+    "food": "Orijen"
 }
 
 ### 
