@@ -1,18 +1,25 @@
-# GET  http://localhost:3000/
+GET  http://localhost:3000/
 
-# GET http://localhost:3000/api/cats
+###
 
-# GET http://localhost:3000/api/cats/4
+GET http://localhost:3000/api/cats
 
+###
 
-# POST http://localhost:3000/api/cats
-# Content-Type: application/json
+GET http://localhost:3000/api/cats/4
 
-# {
-#     "name": "Ysera",
-#     "color": "Orange"
-#     "food": "Orijen",
-# }
+###
+
+POST http://localhost:3000/api/cats
+Content-Type: application/json
+
+{
+    "name": "Ysera",
+    "color": "Orange"
+    "food": "Orijen",
+}
+
+### 
 
 PUT  http://localhost:3000/api/cats/1
 Content-Type: application/json
@@ -24,5 +31,6 @@ Content-Type: application/json
 }
 
 
+###
 
-# DELETE http://localhost:3000/api/cats/4
+DELETE http://localhost:3000/api/cats/4

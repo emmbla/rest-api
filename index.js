@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 // Alla objekt
 app.get('/api/cats', (req, res) => {
-  res.send(cats)
+  res.json(cats)
 })
 
 // Specifikt objekt
@@ -36,7 +36,7 @@ app.post('/api/cats', (req, res) => {
   let newCat = req.body
   newCat.id = s4()
   cats.push(req.body)
-  res.status(201).send(cats)
+  res.status(201).send()
 })
 
 
@@ -66,7 +66,6 @@ app.delete('/api/cats/:id', (req, res) => {
   
   res.send(cat)
 })
-
 
 
 app.listen(port, () => console.log(`Running at http://localhost:${port}`))
